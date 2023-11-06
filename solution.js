@@ -60,6 +60,7 @@ function fillConfirmReservationData(customReservation) {
     document.querySelector('.confirm-reservation #guest-data-in').textContent = `Date-in: ${customReservation.startDate}`;
     document.querySelector('.confirm-reservation #guest-data-out').textContent = `Date-out: ${customReservation.endDate}`;
     document.querySelector('#search-back-btn').addEventListener('click', (e) => fillSearchForm(e));
+}
 
 function fillSearchForm(e) {
     e.preventDefault();
