@@ -112,5 +112,3 @@ function showThanksPage(e) {
     e.preventDefault();
     changeContent('thank-you-content');
 }
-// test purpose
-changeContent('confirm-reservation-content'); 
