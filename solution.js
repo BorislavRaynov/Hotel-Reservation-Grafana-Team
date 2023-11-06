@@ -15,8 +15,8 @@ document.querySelector('#guest-details-next-btn').addEventListener('click', (e) 
 
 function changeContent(className) {
     document.querySelectorAll('.custom-form').forEach(div => div.classList.add('hidden'));
-    if( document.querySelector(`.${className}`) != null){
-    document.querySelector(`.${className}`).classList.remove('hidden');
+    if (document.querySelector(`.${className}`) != null) {
+        document.querySelector(`.${className}`).classList.remove('hidden');
     }
 }
 
@@ -60,6 +60,7 @@ function fillConfirmReservationData(customReservation) {
     document.querySelector('.confirm-reservation #guest-data-in').textContent = `Date-in: ${customReservation.startDate}`;
     document.querySelector('.confirm-reservation #guest-data-out').textContent = `Date-out: ${customReservation.endDate}`;
     document.querySelector('#search-back-btn').addEventListener('click', (e) => fillSearchForm(e));
+}
 
 function fillSearchForm(e) {
     e.preventDefault();
