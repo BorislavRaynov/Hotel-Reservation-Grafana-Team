@@ -15,8 +15,8 @@ document.querySelector('#guest-details-next-btn').addEventListener('click', (e) 
 
 function changeContent(className) {
     document.querySelectorAll('.custom-form').forEach(div => div.classList.add('hidden'));
-    if( document.querySelector(`.${className}`) != null){
-    document.querySelector(`.${className}`).classList.remove('hidden');
+    if (document.querySelector(`.${className}`) != null) {
+        document.querySelector(`.${className}`).classList.remove('hidden');
     }
 }
 
@@ -97,3 +97,20 @@ function findRoom(e) {
     console.log(reservation);
     changeContent('guest-details-form-content');
 }
+
+// Confirm reservation functionality
+document.querySelector('#confirm-back-btn').addEventListener('click', (e) => getBackToPersonalData(e));
+
+function getBackToPersonalData(e) {
+    e.preventDefault();
+    changeContent('guest-details-form-content');
+}
+
+document.querySelector('#confirm-reservation').addEventListener('click', (e) => showThanksPage(e));
+
+function showThanksPage(e) {
+    e.preventDefault();
+    changeContent('thank-you-content');
+}
+// test purpose
+changeContent('confirm-reservation-content'); 
