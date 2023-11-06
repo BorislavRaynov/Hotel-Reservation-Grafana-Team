@@ -12,6 +12,16 @@ let reservation =
 document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
 document.querySelector('#guest-details-back-btn').addEventListener('click', (e) => fillRoomForm(e));
 document.querySelector('#guest-details-next-btn').addEventListener('click', (e) => getPersonalData(e));
+document.querySelector('#search-next-btn').addEventListener('click', (e) => findRoom(e));
+
+document.querySelector('#new-reservation').addEventListener('click', (e) => {
+    e.preventDefault();
+    cleanData(e);
+});
+
+document.querySelectorAll('.room-type').forEach(room => {
+    room.addEventListener("click", (e) => selectRoomType(e))
+});
 
 function changeContent(className) {
     document.querySelectorAll('.custom-form').forEach(div => div.classList.add('hidden'));
@@ -19,11 +29,6 @@ function changeContent(className) {
         document.querySelector(`.${className}`).classList.remove('hidden');
     }
 }
-
-document.querySelector('#new-reservation').addEventListener('click', (e) => {
-    e.preventDefault();
-    cleanData(e);
-});
 
 function cleanData(e) {
     changeContent('search-form-content');
@@ -86,11 +91,6 @@ function fillSearchForm(e) {
     document.querySelector('#people').value = reservation.guestsCount;
 }
 
-
-document.querySelectorAll('.room-type').forEach(room => {
-    room.addEventListener("click", (e) => selectRoomType(e))
-});
-
 function selectRoomType(e) {
     let myTarget = undefined;
     e.preventDefault;
@@ -103,8 +103,6 @@ function selectRoomType(e) {
         room.classList.remove('selected-room'));
     myTarget.classList.add('selected-room');
 }
-
-document.querySelector('#search-next-btn').addEventListener('click', (e) => findRoom(e));
 
 function findRoom(e) {
     e.preventDefault();
